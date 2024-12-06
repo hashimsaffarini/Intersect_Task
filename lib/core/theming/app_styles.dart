@@ -22,4 +22,8 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     fontSize: 12.sp,
   );
+  static TextStyle medium24 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 24.sp,
+  );
 }
