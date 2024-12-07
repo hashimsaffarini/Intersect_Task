@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intersect_task/core/di/dependency_injection.dart';
+import 'package:intersect_task/features/home/logic/home_cubit.dart';
 import 'package:intersect_task/features/home/ui/home_screen.dart';
 
 class AppRouter {
@@ -6,7 +9,10 @@ class AppRouter {
     switch (settings.name) {
       case HomeScreen.routeName:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) => BlocProvider(
+            create: (_) => getIt<HomeCubit>()..fetchMovies(),
+            child: const HomeScreen(),
+          ),
         );
       default:
         return MaterialPageRoute(
