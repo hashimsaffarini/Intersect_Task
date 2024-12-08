@@ -15,7 +15,7 @@ AppBar buildSearchAppBar(BuildContext context) {
         size: 24.w,
       ),
       onPressed: () {
-        context.read<HomeCubit>().fetchMovies();
+        context.read<HomeCubit>().reFetchMovies();
         Navigator.pop(context);
       },
     ),

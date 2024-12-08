@@ -8,7 +8,7 @@ import '../data/repos/home_repo.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit(this.homeRepo) : super(HomeState());
   final HomeRepo homeRepo;
-
+  MoviesResponseModel? moviesResponse;
   List<Results>? movies = [];
   List<Results>? filteredMovies = [];
   TextEditingController searchController = TextEditingController();
@@ -20,10 +20,15 @@ class HomeCubit extends Cubit<HomeState> {
       (failure) => emit(GetMoviesFailure(failure)),
       (moviesResponse) {
         movies = moviesResponse.results;
+        this.moviesResponse = moviesResponse;
         filteredMovies = movies;
         emit(GetMoviesSuccess(moviesResponse));
       },
     );
+  }
+
+  void reFetchMovies() {
+    emit(GetMoviesSuccess(moviesResponse!));
   }
 
   void filterMovies(String query) {
