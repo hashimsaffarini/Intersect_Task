@@ -26,4 +26,35 @@ class AppStyles {
     fontWeight: FontWeight.w500,
     fontSize: 24.sp,
   );
+  static TextStyle medium16 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 16.sp,
+  );
+  static TextStyle medium20 = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 20.sp,
+  );
+  static TextStyle regular16 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 16.sp,
+  );
+  static TextStyle regular14 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 14.sp,
+  );
+  static TextStyle regular12 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 12.sp,
+  );
+
+  static TextStyle regular18 = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 18.sp,
+  );
+
+  static TextStyle semiBold18 = TextStyle(
+    fontWeight: FontWeight.w600,
+    fontSize: 18.sp,
+  );
+  
 }

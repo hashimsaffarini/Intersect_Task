@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intersect_task/features/home/data/models/movies_response_model.dart';
+import 'package:intersect_task/features/home/ui/featured_details_screen.dart';
 import 'package:intersect_task/features/home/ui/widgets/featured_series_page_view_item.dart';
 
 class FeaturedSeriesPageView extends StatelessWidget {
@@ -36,8 +37,17 @@ class FeaturedSeriesPageView extends StatelessWidget {
                   ..translate(0.0, verticalOffset)
                   ..rotateZ(rotation),
                 alignment: Alignment.center,
-                child: FeaturedSeriesPageViewItem(
-                  movie: movies?.results![index],
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(
+                      context,
+                      FeaturedDetailsScreen.routeName,
+                      arguments: movies?.results![index],
+                    );
+                  },
+                  child: FeaturedSeriesPageViewItem(
+                    movie: movies?.results![index],
+                  ),
                 ),
               );
             },
