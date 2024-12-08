@@ -25,6 +25,7 @@ class HomeScreenBody extends StatelessWidget {
           end: Alignment.bottomRight,
           colors: [
             AppColors.primaryColor,
+            AppColors.primaryColor,
             Color(0xff373E52),
           ],
         ),
