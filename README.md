@@ -32,16 +32,22 @@ Dive into the world of movies with the Intersect Movies App! This app features s
     │   ├── main.dart
     │   ├── marvel_app.dart
 
-## ✨ Features
+## 🚀 Features
 
 Intersect Movies App offers the following features:
 
 `Clean Architecture`: The app follows clean architecture principles to ensure a maintainable and modular codebase with clear separation of concerns.
+
 `Bloc State Management`: Efficiently manages states using Bloc and Cubit, providing seamless UI updates in response to state changes.
+
 `TMDB API Integration`: Retrieves comprehensive data about movies, including their titles, release dates, ratings, overviews, and more using the TMDB API.
+
 `Local Database (SharedPreferences)`: Caches data locally with SharedPreferences to ensure offline accessibility and improved performance.
+
 `Search Functionality`: Provides real-time movie search with filtering by title, reset options, and smooth animations.
+
 `Engaging UI/UX`: Designed with user-friendly interfaces, gradient theming, and smooth animations for a polished user experience.
+
 `Reusable Widgets`: Utilizes a widget-based architecture for efficient code reuse across the application.
 
 ## 🎬 App Preview
@@ -52,4 +58,31 @@ Intersect Movies App offers the following features:
 
 
 ---
+
+
+## 🛠️ Setup Instructions
+
+Follow these steps to get the project up and running on your local machine:
+
+### Prerequisites
+
+1. **Flutter Installed**:
+   - Ensure you have Flutter installed. If not, [download Flutter](https://flutter.dev/docs/get-started/install).
+
+2. **API Key Setup**:
+   - Add your API key in the `.env` file in the project root:
+
+     ```
+     API_KEY=your_api_key_here
+     ```
+
+---
+
+### Installation
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/hashimsaffarini/Intersect_Task.git
+   cd Intersect_Task
 
