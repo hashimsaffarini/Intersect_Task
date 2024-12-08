@@ -13,6 +13,8 @@ class FeaturedDetailsScreen extends StatelessWidget {
       backgroundColor: AppColors.primaryColor,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
         leading: IconButton(
           icon: const Icon(

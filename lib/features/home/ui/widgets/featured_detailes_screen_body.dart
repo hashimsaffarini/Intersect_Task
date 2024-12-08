@@ -15,54 +15,56 @@ class FeaturedDetailsScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.45.h,
-          width: double.infinity,
-          child: CachedNetworkImage(
-            imageUrl: ApiConstants.imageBaseUrl +
-                ApiConstants.posterSize +
-                movie.posterPath!,
-            fit: BoxFit.cover,
+    return SingleChildScrollView(
+      child: Stack(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.45.h,
             width: double.infinity,
+            child: CachedNetworkImage(
+              imageUrl: ApiConstants.imageBaseUrl +
+                  ApiConstants.posterSize +
+                  movie.posterPath!,
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 200),
-          child: Container(
+          Container(
+            margin: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height * 0.33.h,
+            ),
+            height: MediaQuery.of(context).size.height * 0.2.h,
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  AppColors.primaryColor.withOpacity(0),
-                  AppColors.primaryColor.withOpacity(1),
+                  AppColors.primaryColor.withOpacity(0.0),
+                  AppColors.primaryColor.withOpacity(0.8),
+                  AppColors.primaryColor.withOpacity(0.95),
                   AppColors.primaryColor.withOpacity(1),
                   AppColors.primaryColor.withOpacity(1.0),
                 ],
               ),
             ),
           ),
-        ),
-        Positioned(
-          top: 300.h,
-          left: 0,
-          right: 0,
-          child: SvgPicture.asset(
-            Assets.imagesPlay,
-            height: 60.h,
-            width: 60.w,
+          Positioned(
+            top: 300.h,
+            left: 0,
+            right: 0,
+            child: SvgPicture.asset(
+              Assets.imagesPlay,
+              height: 60.h,
+              width: 60.w,
+            ),
           ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.43.h,
-          ),
-          child: SizedBox(
-            width: double.infinity,
-            child: SingleChildScrollView(
+          Padding(
+            padding: EdgeInsets.only(
+              top: MediaQuery.of(context).size.height * 0.425.h,
+            ),
+            child: SizedBox(
+              width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -168,18 +170,20 @@ class FeaturedDetailsScreenBody extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           Wrap(
-                            spacing: 10,
-                            runSpacing: 10,
+                            spacing: 7.w,
+                            runSpacing: 10.h,
                             children: movie.genreIds!
-                                .map((id) => Chip(
-                                      label: Text(
-                                        "Genre $id",
-                                        style: AppStyles.regular14.copyWith(
-                                          color: Colors.white,
-                                        ),
+                                .map(
+                                  (id) => Chip(
+                                    label: Text(
+                                      "Genre $id",
+                                      style: AppStyles.regular14.copyWith(
+                                        color: Colors.white,
                                       ),
-                                      backgroundColor: AppColors.primaryColor,
-                                    ))
+                                    ),
+                                    backgroundColor: AppColors.primaryColor,
+                                  ),
+                                )
                                 .toList(),
                           ),
                           const SizedBox(height: 30),
@@ -190,8 +194,8 @@ class FeaturedDetailsScreenBody extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
