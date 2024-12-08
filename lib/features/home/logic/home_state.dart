@@ -18,3 +18,9 @@ final class GetMoviesFailure extends HomeState {
 
   GetMoviesFailure(this.failure);
 }
+
+final class HomeFilteredState extends HomeState {
+  final List<Results> filteredMovies;
+
+  HomeFilteredState(this.filteredMovies);
+}
